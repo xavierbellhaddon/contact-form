@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentors: Contact Form</title>
+    <script src="index.ts"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="outer-wrapper">
+      <div id="contact-form-wrapper">
+        <h2>Contact Us</h2>
+        <form action="" id="contact-form">
+          <label for="firstname">First Name</label>
+          <input type="text" id="firstname" name="firstname" />
+          <label for="lastname">Last Name</label>
+          <input type="text" id="lastname" name="lastname" />
+          <label for="email">Email Address</label>
+          <input type="text" id="email" name="email" />
+          <label for="query-type">Query Type</label>
+          <div id="query-type-wrapper">
+            <div class="query-type-option">
+              <input type="radio" name="query-type">General Enquiry</input>
+            </div>
+            <div class="query-type-option">
+              <input type="radio" name="query-type">Support Request</input>
+            </div>
+          </div>
+          <label for="message">Message</label>
+          <textarea name="" id="message" name="messag"></textarea>
+          <div id="consent-wrapper">
+            <input type="checkbox" id="consent" name="consent" />
+            <label for="consent">I consent to being contacted by the team</label>
+          </div>
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
