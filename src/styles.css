@@ -1,13 +1,148 @@
 * {
+  margin: 0;
   box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+}
+
+:root {
+  --gray500: #86a2a5;
+  --gray900: #2a4144;
+  --green200: #e0f1e8;
+  --green600: #0c7d69;
+  --hover: #203c34;
+  --error: #d73c3c;
+}
+
+body {
+  color: var(--gray900);
+  background-color: var(--green200);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -1px;
+  margin-bottom: 32px;
+}
+
+input,
+textarea,
+.radio-wrapper {
+  border: 1px solid var(--gray500);
+  border-radius: 8px;
+  padding: 12px 24px;
+}
+
+input:hover,
+textarea:hover {
+  border: 1px solid var(--green600);
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  font-size: 18px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  top: 50;
+  left: 0;
+  opacity: 0;
+  height: 19.5px;
+  width: 19.5px;
+}
+
+input[type="radio"] {
+  position: absolute;
+  top: 50;
+  left: 0;
+  opacity: 0;
+  height: 19.5px;
+  width: 19.5px;
+}
+
+input[type="submit"] {
+  border: none;
+  padding: 16px 40px;
+  color: white;
+  background-color: var(--green600);
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background-color: var(--hover);
+}
+
+label[for="general-enquiry"],
+label[for="support-request"] {
+  font-size: 18px;
+}
+
+.field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-wrapper {
+  position: relative;
+}
+
+#contact-form-wrapper {
+  border-radius: 16px;
+  background-color: white;
+  margin: 32px 16px;
+  padding: 24px;
 }
 
 #contact-form {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
-#query-type-wrapper {
+#query-type-option-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+.radio-label,
+#consent-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 35.5px;
+}
+
+.custom-radio,
+#custom-checkbox {
+  position: absolute;
+  top: 50;
+  left: 0;
+  height: 19.5px;
+  width: 19.5px;
+  cursor: pointer;
+  background-size: cover;
+}
+
+.custom-radio {
+  background-image: url("./assets/icon-radio.svg");
+}
+
+#custom-checkbox {
+  background-image: url("./assets/icon-checkbox.svg");
+}
+
+input[type="radio"]:checked ~ .custom-radio {
+  background-image: url("./assets/icon-radio-selected.svg");
+}
+
+input[type="checkbox"]:checked ~ #custom-checkbox {
+  background-image: url("./assets/icon-checkbox-check.svg");
 }
