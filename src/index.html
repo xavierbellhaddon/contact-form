@@ -18,6 +18,7 @@
             >
 
             <input type="text" id="firstname" name="firstname" />
+            <p class="error-message">This field is required</p>
           </div>
 
           <div class="field-wrapper">
@@ -25,6 +26,7 @@
               >Last Name<span class="asterisk">*</span></label
             >
             <input type="text" id="lastname" name="lastname" />
+            <p class="error-message">This field is required</p>
           </div>
 
           <div class="field-wrapper">
@@ -32,6 +34,7 @@
               >Email Address<span class="asterisk">*</span></label
             >
             <input type="text" id="email" name="email" required />
+            <p class="error-message">Please enter a valid email address</p>
           </div>
 
           <div class="field-wrapper">
@@ -66,11 +69,13 @@
                 </label>
               </div>
             </div>
+
+            <p class="error-message">Please select a query type</p>
           </div>
 
           <div class="field-wrapper">
             <label for="message">Message<span class="asterisk">*</span></label>
-            <textarea name="" id="message" name="messag"></textarea>
+            <textarea name="" id="message" name="message"></textarea>
           </div>
         </div>
         <div id="consent-wrapper">
@@ -82,6 +87,9 @@
             <input type="checkbox" id="consent" name="consent" />
             <span id="custom-checkbox"></span>
           </label>
+          <p class="error-message">
+            To submit this form, please consent to being contacted
+          </p>
         </div>
 
         <input type="submit" />

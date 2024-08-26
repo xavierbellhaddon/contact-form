@@ -169,7 +169,7 @@ input[type="submit"] {
   top: 0;
   left: 0;
   margin: 24px;
-  display: flex;
+  display: none;
   gap: 8px;
   flex-direction: column;
   padding: 27px;
@@ -193,4 +193,23 @@ input[type="submit"] {
 
 #success-message {
   color: var(--green200);
+}
+
+.success {
+  display: flex;
+}
+
+input[type="text"].error,
+textarea.error {
+  border: 1px solid var(--error);
+}
+
+p.error-message {
+  display: none;
+  color: var(--error);
+  margin-top: 7px;
+}
+
+p.error-message.error {
+  display: block;
 }
