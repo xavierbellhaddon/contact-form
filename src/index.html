@@ -12,58 +12,57 @@
       <div id="contact-form-wrapper">
         <h2>Contact Us</h2>
         <form action="" id="contact-form">
-          <div class="field-wrapper">
-            <label for="firstname">First Name</label>
-            <input type="text" id="firstname" name="firstname" />
-          </div>
+          <div id="inner-wrapper">
+            <div class="field-wrapper">
+              <label for="firstname">First Name</label>
+              <input type="text" id="firstname" name="firstname" />
+            </div>
 
-          <div class="field-wrapper">
-            <label for="lastname">Last Name</label>
-            <input type="text" id="lastname" name="lastname" />
-          </div>
+            <div class="field-wrapper">
+              <label for="lastname">Last Name</label>
+              <input type="text" id="lastname" name="lastname" />
+            </div>
 
-          <div class="field-wrapper">
-            <label for="email">Email Address</label>
-            <input type="text" id="email" name="email" />
-          </div>
+            <div class="field-wrapper">
+              <label for="email">Email Address</label>
+              <input type="text" id="email" name="email" />
+            </div>
 
-          <div class="field-wrapper">
-            <label for="query-type">Query Type</label>
+            <div class="field-wrapper">
+              <label for="query-type">Query Type</label>
 
-            <div id="query-type-option-wrapper">
-              <!-- <div class="radio-wrapper">
-                <input type="radio" id="general-enquiry" name="query-type" />
-                <label for="general-enquiry">General Enquiry</label>
-              </div> -->
+              <div id="query-type-option-wrapper">
+                <div class="radio-wrapper">
+                  <label for="general-enquiry" class="radio-label">
+                    General Enquiry
+                    <input
+                      type="radio"
+                      id="general-enquiry"
+                      name="query-type"
+                    />
+                    <span class="custom-radio"></span>
+                  </label>
+                </div>
 
-              <!-- <div class="radio-wrapper">
-                <input type="radio" id="support-request" name="query-type" />
-                <label for="support-request">Support Request</label>
-              </div> -->
-
-              <div class="radio-wrapper">
-                <label for="general-enquiry" class="radio-label">
-                  General Enquiry
-                  <input type="radio" id="general-enquiry" name="query-type" />
-                  <span class="custom-radio"></span>
-                </label>
-              </div>
-
-              <div class="radio-wrapper">
-                <label for="support-request" class="radio-label">
-                  Support Request
-                  <input type="radio" id="support-request" name="query-type" />
-                  <span class="custom-radio"></span>
-                </label>
+                <div class="radio-wrapper">
+                  <label for="support-request" class="radio-label">
+                    Support Request
+                    <input
+                      type="radio"
+                      id="support-request"
+                      name="query-type"
+                    />
+                    <span class="custom-radio"></span>
+                  </label>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="field-wrapper">
-            <label for="message">Message</label>
-            <textarea name="" id="message" name="messag"></textarea>
+            <div class="field-wrapper">
+              <label for="message">Message</label>
+              <textarea name="" id="message" name="messag"></textarea>
+            </div>
           </div>
-
           <div id="consent-wrapper">
             <label for="consent" id="consent-label" class="checkbox-wrapper">
               I consent to being contacted by the team
