@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentors: Contact Form</title>
-    <script src="index.ts"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -17,24 +16,42 @@
               >First Name<span class="asterisk">*</span></label
             >
 
-            <input type="text" id="firstname" name="firstname" />
-            <p class="error-message">This field is required</p>
+            <input
+              type="text"
+              class="firstname"
+              id="firstname"
+              name="firstname"
+              required
+            />
+            <p class="error-message" id="firstname-error">
+              This field is required
+            </p>
           </div>
 
           <div class="field-wrapper">
             <label for="lastname"
               >Last Name<span class="asterisk">*</span></label
             >
-            <input type="text" id="lastname" name="lastname" />
-            <p class="error-message">This field is required</p>
+            <input
+              type="text"
+              class="lastname"
+              id="lastname"
+              name="lastname"
+              required
+            />
+            <p class="error-message" id="lastname-error">
+              This field is required
+            </p>
           </div>
 
           <div class="field-wrapper">
             <label for="email"
               >Email Address<span class="asterisk">*</span></label
             >
-            <input type="text" id="email" name="email" required />
-            <p class="error-message">Please enter a valid email address</p>
+            <input type="text" class="email" id="email" name="email" required />
+            <p class="error-message" id="email-error">
+              Please enter a valid email address
+            </p>
           </div>
 
           <div class="field-wrapper">
@@ -48,6 +65,7 @@
                   General Enquiry
                   <input
                     type="radio"
+                    class="query-type"
                     id="general-enquiry"
                     name="query-type"
                     required
@@ -61,6 +79,7 @@
                   Support Request
                   <input
                     type="radio"
+                    class="query-type"
                     id="support-request"
                     name="query-type"
                     required
@@ -70,29 +89,38 @@
               </div>
             </div>
 
-            <p class="error-message">Please select a query type</p>
+            <p class="error-message" id="query-type-error">
+              Please select a query type
+            </p>
           </div>
 
           <div class="field-wrapper">
             <label for="message">Message<span class="asterisk">*</span></label>
-            <textarea name="" id="message" name="message"></textarea>
+            <textarea
+              class="message"
+              id="message"
+              name="message"
+              required
+            ></textarea>
           </div>
+          <p class="error-message" id="message-error">This field is required</p>
         </div>
+
         <div id="consent-wrapper">
           <label for="consent" id="consent-label" class="checkbox-wrapper">
             <span
               >I consent to being contacted by the team
               <span class="asterisk">*</span></span
             >
-            <input type="checkbox" id="consent" name="consent" />
+            <input type="checkbox" id="consent" name="consent" required />
             <span id="custom-checkbox"></span>
           </label>
-          <p class="error-message">
+          <p class="error-message" id="consent-error">
             To submit this form, please consent to being contacted
           </p>
         </div>
 
-        <input type="submit" />
+        <input type="submit" id="submit" />
       </form>
     </div>
 
@@ -106,5 +134,7 @@
         Thanks for completing the form. We'll be in touch soon!
       </p>
     </div>
+
+    <script src="/dist/index.js"></script>
   </body>
 </html>

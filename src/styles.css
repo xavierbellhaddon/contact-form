@@ -177,6 +177,10 @@ input[type="submit"] {
   background-color: var(--gray900);
 }
 
+#success-popup.success {
+  display: flex;
+}
+
 #success-confirmation-wrapper {
   display: flex;
 }
@@ -193,10 +197,6 @@ input[type="submit"] {
 
 #success-message {
   color: var(--green200);
-}
-
-.success {
-  display: flex;
 }
 
 input[type="text"].error,
