@@ -43,6 +43,11 @@ textarea,
   padding: 12px 24px;
 }
 
+.radio-wrapper:has(input:checked) {
+  border: 1px solid var(--green600);
+  background-color: var(--green200);
+}
+
 input:hover,
 textarea:hover {
   border: 1px solid var(--green600);

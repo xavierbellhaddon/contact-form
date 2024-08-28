@@ -1,13 +1,3 @@
-// WHEN the Submit button is clicked
-// IF a required field is empty
-// block submission
-// and add "error" class to field
-// and to error message
-// ELSE show success message
-
-// IF consent is checked
-// change checkbox label
-
 const successPopup = document.getElementById("success-popup");
 
 const inputs = document.querySelectorAll("input");
