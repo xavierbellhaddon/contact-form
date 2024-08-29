@@ -22,8 +22,6 @@ consent.addEventListener("change", () => {
         'I hereby consent to being contacted by the team <span class="asterisk">*</span></span>')
     : (consentLabel.innerHTML =
         'I consent to being contacted by the team <span class="asterisk">*</span></span>');
-
-  console.log(consent.checked);
 });
 
 const handleSubmit = (e) => {
