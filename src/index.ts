@@ -8,12 +8,23 @@ const fields: Record<any, any> = [...inputs, message];
 
 const submit = document.getElementById("submit");
 
+const emailRegex = new RegExp(
+  /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+);
+
+document.getElementById("consent").addEventListener("change", () => {
+  document.getElementById("consent-label-span").innerHTML =
+    'I hereby consent to being contacted by the team <span class="asterisk">*</span></span>';
+});
+
 const handleSubmit = (e) => {
   let radioName;
   let radioIsChecked = false;
   let checkboxIsChecked = true;
   let hasFieldValue = true;
   let hasError = false;
+
+  e.preventDefault();
 
   fields.map((field) => {
     if (field.type === "submit") {
@@ -38,7 +49,10 @@ const handleSubmit = (e) => {
       }
 
       if (field.type === "text" || field.type === "textarea") {
-        if (field.value === "") {
+        if (
+          field.value === "" ||
+          (field.name === "email" && !emailRegex.test(field.value))
+        ) {
           document.getElementById(`${field.name}-error`).classList.add("error");
           hasFieldValue = false;
         } else {
@@ -62,7 +76,6 @@ const handleSubmit = (e) => {
   }
 
   successPopup.classList.add("success");
-  e.preventDefault();
 };
 
 submit.addEventListener("click", handleSubmit);
