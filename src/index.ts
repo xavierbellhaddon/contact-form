@@ -25,6 +25,7 @@ consent.addEventListener("change", () => {
 });
 
 const handleSubmit = (e) => {
+  let radio;
   let radioName;
   let radioIsChecked = false;
   let checkboxIsChecked = true;
@@ -47,11 +48,15 @@ const handleSubmit = (e) => {
       if (field.type === "checkbox") {
         if (!field.checked) {
           document.getElementById(`${field.name}-error`).classList.add("error");
+          field.setAttribute("aria-describedby", `${field.name}-error`);
+          field.setAttribute("aria-invalid", "true");
           checkboxIsChecked = false;
         } else {
           document
             .getElementById(`${field.name}-error`)
             .classList.remove("error");
+          field.removeAttribute("aria-describedby");
+          field.setAttribute("aria-invalid", "false");
         }
       }
 
@@ -61,11 +66,15 @@ const handleSubmit = (e) => {
           (field.name === "email" && !emailRegex.test(field.value))
         ) {
           document.getElementById(`${field.name}-error`).classList.add("error");
+          field.setAttribute("aria-describedby", `${field.name}-error`);
+          field.setAttribute("aria-invalid", "true");
           hasFieldValue = false;
         } else {
           document
             .getElementById(`${field.name}-error`)
             .classList.remove("error");
+          field.removeAttribute("aria-describedby");
+          field.setAttribute("aria-invalid", "false");
         }
       }
     }
@@ -73,8 +82,18 @@ const handleSubmit = (e) => {
 
   if (!radioIsChecked) {
     document.getElementById(`${radioName}-error`).classList.add("error");
+
+    document.querySelectorAll(`input[name="${radioName}"]`).forEach((radio) => {
+      radio.setAttribute("aria-describedby", `${radioName}-error`);
+      radio.setAttribute("aria-invalid", "true");
+    });
   } else {
     document.getElementById(`${radioName}-error`).classList.remove("error");
+
+    document.querySelectorAll(`input[name="${radioName}"]`).forEach((radio) => {
+      radio.removeAttribute("aria-describedby");
+      radio.setAttribute("aria-invalid", "false");
+    });
   }
 
   if (!radioIsChecked || !checkboxIsChecked || !hasFieldValue) {

@@ -42,6 +42,7 @@ textarea,
   border-radius: 8px;
   padding: 12px 24px;
   width: 100%;
+  transition: border-color 0.5s ease;
 }
 
 .radio-wrapper:has(input:checked) {
@@ -60,22 +61,13 @@ textarea {
   font-size: 18px;
 }
 
+input[type="radio"],
 input[type="checkbox"] {
-  position: absolute;
-  top: 50;
-  left: 0;
+  position: relative;
   opacity: 0;
   height: 19.5px;
   width: 19.5px;
-}
-
-input[type="radio"] {
-  position: absolute;
-  top: 50;
-  left: 0;
-  opacity: 0;
-  height: 19.5px;
-  width: 19.5px;
+  z-index: 1;
 }
 
 input[type="submit"]:hover,
@@ -96,7 +88,13 @@ label[for="support-request"] {
 }
 
 .radio-wrapper {
-  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.radio-wrapper,
+input[type="submit"] {
+  transition: background-color 0.5s ease;
 }
 
 #contact-form-wrapper {
@@ -121,17 +119,12 @@ label[for="support-request"] {
 
 .radio-label,
 #consent-label {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding-left: 35.5px;
+  padding-left: 16px;
 }
 
 .custom-radio,
 #custom-checkbox {
   position: absolute;
-  top: 50;
-  left: 0;
   height: 19.5px;
   width: 19.5px;
   cursor: pointer;
@@ -163,6 +156,11 @@ textarea {
   margin: 40px 0;
 }
 
+#consent-inner-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 input[type="submit"] {
   width: 100%;
   padding: 16px 40px;
@@ -175,18 +173,27 @@ input[type="submit"] {
 #success-popup {
   position: absolute;
   top: 0;
-  left: 0;
-  margin: 24px;
-  display: none;
+  right: 50;
+  /* left: 0; */
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin: 24px auto; */
+  /* visibility: hidden; */
+  /* opacity: 0; */
   gap: 8px;
   flex-direction: column;
   padding: 27px;
   border-radius: 12px;
   background-color: var(--gray900);
+  transition: visibility 0.5s ease;
 }
 
 #success-popup.success {
   display: flex;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 #success-confirmation-wrapper {
@@ -220,6 +227,13 @@ p.error-message {
 
 p.error-message.error {
   display: block;
+}
+
+input:focus,
+textarea:focus,
+.radio-wrapper:has(input[type="radio"]:focus),
+input[type="checkbox"]:focus ~ #custom-checkbox {
+  outline: 2px solid royalblue;
 }
 
 @media (min-width: 768px) {

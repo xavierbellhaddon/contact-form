@@ -63,30 +63,30 @@
 
             <div id="query-type-option-wrapper">
               <div class="radio-wrapper">
+                <input
+                  type="radio"
+                  class="query-type"
+                  id="general-enquiry"
+                  name="query-type"
+                  required
+                />
+                <span class="custom-radio"></span>
                 <label for="general-enquiry" class="radio-label">
                   General Enquiry
-                  <input
-                    type="radio"
-                    class="query-type"
-                    id="general-enquiry"
-                    name="query-type"
-                    required
-                  />
-                  <span class="custom-radio"></span>
                 </label>
               </div>
 
               <div class="radio-wrapper">
+                <input
+                  type="radio"
+                  class="query-type"
+                  id="support-request"
+                  name="query-type"
+                  required
+                />
+                <span class="custom-radio"></span>
                 <label for="support-request" class="radio-label">
                   Support Request
-                  <input
-                    type="radio"
-                    class="query-type"
-                    id="support-request"
-                    name="query-type"
-                    required
-                  />
-                  <span class="custom-radio"></span>
                 </label>
               </div>
             </div>
@@ -109,14 +109,16 @@
         </div>
 
         <div id="consent-wrapper">
-          <label for="consent" id="consent-label" class="checkbox-wrapper">
-            <span id="consent-label-span"
-              >I consent to being contacted by the team
-              <span class="asterisk">*</span></span
-            >
+          <div id="consent-inner-wrapper">
             <input type="checkbox" id="consent" name="consent" required />
             <span id="custom-checkbox"></span>
-          </label>
+            <label for="consent" id="consent-label" class="checkbox-wrapper">
+              <span id="consent-label-span"
+                >I consent to being contacted by the team
+                <span class="asterisk">*</span></span
+              >
+            </label>
+          </div>
           <p class="error-message" id="consent-error">
             To submit this form, please consent to being contacted
           </p>
