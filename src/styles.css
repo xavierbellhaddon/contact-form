@@ -41,6 +41,7 @@ textarea,
   border: 1px solid var(--gray500);
   border-radius: 8px;
   padding: 12px 24px;
+  width: 100%;
 }
 
 .radio-wrapper:has(input:checked) {
@@ -87,7 +88,8 @@ label[for="support-request"] {
   font-size: 18px;
 }
 
-.field-wrapper {
+.field-wrapper,
+.inner-field-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -104,7 +106,8 @@ label[for="support-request"] {
   padding: 24px;
 }
 
-#inner-wrapper {
+#inner-wrapper,
+#multifield-wrapper {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -217,4 +220,29 @@ p.error-message {
 
 p.error-message.error {
   display: block;
+}
+
+@media (min-width: 768px) {
+  .field-wrapper {
+    width: 100%;
+  }
+
+  #multifield-wrapper {
+    gap: 16px;
+  }
+
+  #multifield-wrapper,
+  #query-type-option-wrapper {
+    flex-direction: row;
+  }
+
+  #contact-form-wrapper {
+    margin: 128px auto;
+    max-width: 736px;
+    max-height: 941px;
+  }
+
+  textarea {
+    height: 105px;
+  }
 }
