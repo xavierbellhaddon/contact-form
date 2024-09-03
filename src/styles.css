@@ -193,8 +193,9 @@ input[type="submit"] {
 
 /* Hover, active, focus, and checked states */
 
-input:hover,
-textarea:hover {
+input[type="text"]:hover,
+textarea:hover,
+.radio-wrapper:hover {
   border: 1px solid var(--green600);
 }
 
@@ -222,6 +223,7 @@ input[type="submit"]:hover,
 input[type="submit"]:active {
   background-color: var(--hover);
 }
+
 /* Error state */
 
 input[type="text"].error,
