@@ -209,19 +209,19 @@ input[type="radio"]:checked ~ .custom-radio {
 
 input[type="checkbox"]:checked ~ #custom-checkbox {
   background-image: url("./assets/icon-checkbox-check.svg");
-  input:focus,
-  textarea:focus,
-  .radio-wrapper:has(input[type="radio"]:focus),
-  input[type="checkbox"]:focus ~ #custom-checkbox {
-    outline: 2px solid royalblue;
-  }
-
-  input[type="submit"]:hover,
-  input[type="submit"]:active {
-    background-color: var(--hover);
-  }
 }
 
+input:focus,
+textarea:focus,
+.radio-wrapper:has(input[type="radio"]:focus),
+input[type="checkbox"]:focus ~ #custom-checkbox {
+  outline: 2px solid royalblue;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background-color: var(--hover);
+}
 /* Error state */
 
 input[type="text"].error,
