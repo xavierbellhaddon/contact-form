@@ -26,6 +26,8 @@ body {
   padding: 32px 16px;
 }
 
+/* Default styling */
+
 #contact-form-wrapper {
   border-radius: 16px;
   background-color: white;
