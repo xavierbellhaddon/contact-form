@@ -15,11 +15,15 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--gray900);
   background-color: var(--green200);
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0px;
+  padding: 32px 16px;
 }
 
 h2 {
@@ -100,8 +104,9 @@ input[type="submit"] {
 #contact-form-wrapper {
   border-radius: 16px;
   background-color: white;
-  margin: 32px 16px;
   padding: 24px;
+  width: 100%;
+  max-width: 736px;
 }
 
 #inner-wrapper,
@@ -172,25 +177,17 @@ input[type="submit"] {
 
 #success-popup {
   position: absolute;
-  top: 0;
-  right: 50;
-  /* left: 0; */
-  width: 450px;
-  margin-left: auto;
-  margin-right: auto;
-  /* margin: 24px auto; */
-  /* visibility: hidden; */
-  /* opacity: 0; */
   gap: 8px;
-  flex-direction: column;
-  padding: 27px;
+  padding: 24px;
   border-radius: 12px;
   background-color: var(--gray900);
   transition: visibility 0.5s ease;
+  margin: 24px;
+  margin-top: -5px;
+  visibility: hidden;
 }
 
 #success-popup.success {
-  display: flex;
   visibility: visible;
   opacity: 1;
   transition: opacity 0.5s ease;
@@ -203,6 +200,7 @@ input[type="submit"] {
 #success-icon {
   content: url("./assets/icon-success-check.svg");
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 #success-confirmation {
@@ -237,6 +235,10 @@ input[type="checkbox"]:focus ~ #custom-checkbox {
 }
 
 @media (min-width: 768px) {
+  body {
+    padding: 128px 32px;
+  }
+
   .field-wrapper {
     width: 100%;
   }
@@ -251,12 +253,15 @@ input[type="checkbox"]:focus ~ #custom-checkbox {
   }
 
   #contact-form-wrapper {
-    margin: 128px auto;
-    max-width: 736px;
-    max-height: 941px;
+    padding: 40px;
   }
 
   textarea {
     height: 105px;
+  }
+
+  #success-popup {
+    max-width: 100%;
+    margin-top: -100px;
   }
 }
