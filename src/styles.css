@@ -234,7 +234,7 @@ input[type="checkbox"]:focus ~ #custom-checkbox {
   outline: 2px solid royalblue;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   body {
     padding: 128px 32px;
   }
