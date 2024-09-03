@@ -25,7 +25,6 @@ consent.addEventListener("change", () => {
 });
 
 const handleSubmit = (e) => {
-  let radio;
   let radioName;
   let radioIsChecked = false;
   let checkboxIsChecked = true;
